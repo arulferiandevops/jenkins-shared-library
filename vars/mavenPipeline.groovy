@@ -2,7 +2,7 @@ def call() {
     pipeline {
         agent any
         stages {
-            stage("maven compile") {
+            stage("maven clean") {
             steps {
                 script {
                     maven(["clean"])
@@ -16,7 +16,7 @@ def call() {
                     }
                 }
             }
-            stage("maven compile") {
+            stage("maven test") {
                 steps {
                     script {
                         maven(["test"])
